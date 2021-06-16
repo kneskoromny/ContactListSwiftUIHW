@@ -12,11 +12,7 @@ struct ContactDetailView: View {
     let contact: Contact
     
     var body: some View {
-        VStack {
-            
-            Section {
-                
-                List {
+                Form {
                     HStack {
                         Spacer()
                         Image(systemName: "person.fill")
@@ -34,15 +30,12 @@ struct ContactDetailView: View {
                         text: "\(contact.email)"
                     )
                 }
-                .listStyle(GroupedListStyle())
+                .navigationBarTitle("\(contact.fullName)")
             }
         }
-        .navigationBarTitle("\(contact.fullName)")
-    }
-}
 
 struct ContactDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetailView(contact: Contact.getContact())
+        ContactDetailView(contact: Contact.getContactList().first!)
     }
 }

@@ -46,21 +46,4 @@ extension Contact {
         
     }
     
-    static func getContact() -> Contact {
-        let count = min(
-            DataManager.shared.names.count,
-            DataManager.shared.surnames.count,
-            DataManager.shared.phones.count,
-            DataManager.shared.emails.count
-        )
-        
-        let contact = Contact(
-            name: DataManager.shared.names[Int.random(in: 0..<count)],
-            surname: DataManager.shared.surnames[Int.random(in: 0..<count)],
-            phone: DataManager.shared.phones[Int.random(in: 0..<count)],
-            email: DataManager.shared.emails[Int.random(in: 0..<count)]
-        )
-        return contact
-    }
-    
 }

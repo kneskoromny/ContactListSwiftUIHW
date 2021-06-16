@@ -13,12 +13,10 @@ struct NumbersView: View {
     
     var body: some View {
         
-        VStack {
+        
             List {
                 ForEach(contacts, id: \.self) { contact in
-                    
                     Section(header: Text("\(contact.fullName)")) {
-                        
                         List {
                             DetailRowView(
                                 imageString: "phone",
@@ -35,7 +33,7 @@ struct NumbersView: View {
                 }
             }
         }
-    }
+    
     
     struct NumbersView_Previews: PreviewProvider {
         static var previews: some View {

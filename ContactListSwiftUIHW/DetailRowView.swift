@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DetailRowView: View {
    
-    let imageString: String 
+    let imageString: String
     let text: String
     
     var body: some View {
@@ -26,7 +26,7 @@ struct DetailRowView_Previews: PreviewProvider {
     static var previews: some View {
         DetailRowView(
             imageString: "phone",
-            text: Contact.getContact().phone
+            text: Contact.getContactList().first!.phone
         )
     }
 }

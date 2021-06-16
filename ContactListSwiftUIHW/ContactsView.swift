@@ -16,13 +16,10 @@ struct ContactsView: View {
         VStack {
             List(contacts, id: \.self) { contact in
                 
-                NavigationLink(
-                    destination: ContactDetailView(
-                        contact: contact)
-                ) {
+                NavigationLink(destination: ContactDetailView(contact: contact)) {
                     DetailRowView(
                         imageString: "",
-                        text: "\(contact.fullName)"
+                        text: contact.fullName
                     )
                 }
             }
